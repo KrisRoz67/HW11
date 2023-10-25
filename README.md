@@ -65,5 +65,28 @@
   public boolean makeBricks(int small, int big, int goal) {
   // Ваша реализация будет здесь
   }
-
+#### Для себя
+  public List<String> wordNumeration2(List<String> words) {
+  List<String> wordNumeration = new ArrayList<>();
+  int count = 1;
+  String str;
+  int j = 0;
+  while (!words.isEmpty()) {
+  str = words.get(j);
+  wordNumeration.add(str + "#" + count);
+  words.remove(j);
+  int i = 0;
+  while (i < words.size()) {
+  if (str.equalsIgnoreCase(words.get(i))) {
+  count++;
+  wordNumeration.add(str + "#" + count);
+  words.remove(i);
+  } else {
+  i++;
+  }
+  }
+  count = 1;
+  }
+  return wordNumeration;
+  }
 
